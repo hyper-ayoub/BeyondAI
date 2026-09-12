@@ -11,7 +11,9 @@ import {
   LogOut,
   RotateCcw,
   Rocket,
+  Scale,
   ShieldCheck,
+  Target,
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/ui/Container";
@@ -20,15 +22,25 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 
 const TOTAL_DEMO_MS = 34000;
 const TICK_MS = 200;
-const DISTRACTION_THRESHOLD_MS = 2600;
+const DISTRACTION_THRESHOLD_MS: Record<Mode, number> = { focus: 2600, balance: 4400 };
+
+const DAILY_TARGET_MIN = 120;
+const LOGGED_TODAY_MIN = 46;
+const SESSIONS_TODAY = 2;
 
 type Phase = "setup" | "running" | "break" | "summary";
 type TabId = "github" | "docs" | "youtube" | "instagram";
+type Mode = "focus" | "balance";
 
 const goals = [
-  { id: "mvp", label: "Build my MVP", icon: Rocket },
-  { id: "auth", label: "Finish the auth module", icon: ShieldCheck },
-  { id: "learn", label: "Learn AI agents", icon: BookOpen },
+  { id: "mvp", label: "Build my focus", icon: Rocket },
+  { id: "auth", label: "Finish my work balance", icon: ShieldCheck },
+  { id: "learn", label: "Learn my daily goals", icon: BookOpen },
+];
+
+const modes: { id: Mode; label: string; copy: string; icon: typeof Target }[] = [
+  { id: "focus", label: "Focus mode", copy: "Intervenes sooner — a short grace period before it speaks up.", icon: Target },
+  { id: "balance", label: "Balance mode", copy: "More lenient — gives you longer stretches before nudging.", icon: Scale },
 ];
 
 const durations = [25, 50, 90];
@@ -50,6 +62,7 @@ function formatClock(totalSeconds: number) {
 export function FocusSessionDemo() {
   const [phase, setPhase] = useState<Phase>("setup");
   const [goalId, setGoalId] = useState(goals[0].id);
+  const [mode, setMode] = useState<Mode>("focus");
   const [durationMin, setDurationMin] = useState(90);
   const [activeTab, setActiveTab] = useState<TabId>("github");
   const [showIntervention, setShowIntervention] = useState(false);
@@ -119,7 +132,7 @@ export function FocusSessionDemo() {
           s.distractionMs += TICK_MS;
           setDistractionStreakMs((v) => {
             const next = v + TICK_MS;
-            if (next >= DISTRACTION_THRESHOLD_MS) setShowIntervention(true);
+            if (next >= DISTRACTION_THRESHOLD_MS[mode]) setShowIntervention(true);
             return next;
           });
         }
@@ -229,7 +242,9 @@ export function FocusSessionDemo() {
                     className="space-y-6"
                   >
                     <div>
-                      <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">Goal</p>
+                      <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">
+                        Work balance
+                      </p>
                       <div className="flex flex-wrap gap-2">
                         {goals.map((g) => {
                           const Icon = g.icon;
@@ -268,6 +283,49 @@ export function FocusSessionDemo() {
                         ))}
                       </div>
                     </div>
+                    <div>
+                      <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted">
+                        Work / activity balance
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {modes.map((m) => {
+                          const Icon = m.icon;
+                          const selected = m.id === mode;
+                          return (
+                            <button
+                              key={m.id}
+                              onClick={() => setMode(m.id)}
+                              className={`flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors ${
+                                selected
+                                  ? "border-accent/50 bg-accent-soft text-foreground"
+                                  : "border-border text-muted hover:border-border-strong"
+                              }`}
+                            >
+                              <Icon size={14} /> {m.label}
+                            </button>
+                          );
+                        })}
+                      </div>
+                      <p className="mt-2 text-xs text-muted-2">{modes.find((m) => m.id === mode)!.copy}</p>
+                    </div>
+
+                    <div className="rounded-xl border border-border bg-background/40 p-4">
+                      <div className="flex items-center justify-between">
+                        <p className="text-xs text-muted">Today&apos;s progress</p>
+                        <p className="font-mono text-xs text-muted-2">{SESSIONS_TODAY} sessions so far</p>
+                      </div>
+                      <div className="mt-2 flex items-baseline gap-1.5">
+                        <span className="font-mono text-xl font-semibold text-accent-2">{LOGGED_TODAY_MIN}</span>
+                        <span className="text-sm text-muted">/ {DAILY_TARGET_MIN} min daily target</span>
+                      </div>
+                      <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
+                        <div
+                          className="h-full rounded-full bg-accent-2"
+                          style={{ width: `${Math.min(100, (LOGGED_TODAY_MIN / DAILY_TARGET_MIN) * 100)}%` }}
+                        />
+                      </div>
+                    </div>
+
                     <MagneticButton onClick={start} className="w-full sm:w-auto">
                       <Rocket size={16} /> Start focus session
                     </MagneticButton>
