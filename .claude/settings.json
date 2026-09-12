@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{ print NR\": \"length\\($0\\) }' '/f/vr agency boost/vrboostagency/VR-BOOST-AGENCY/componnets/sites/treedis-studio/Capture Services/page.tsx')",
+      "Bash(awk '{ printf \"%d | len=%d | %s\\\\n\", NR, length\\($0\\), substr\\($0,1,150\\) }' /tmp/n_head.txt)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -o /tmp/capture_final.html -w \"HTTP:%{http_code}\\\\n\" http://localhost:3000/Product/Capture --max-time 30)",
+      "Bash(curl -s -o /tmp/capture_final.html -w \"HTTP:%{http_code}\\\\n\" http://localhost:3000/Product/Capture --max-time 60)",
+      "PowerShell(Stop-Process -Id 31268,14328,4756,28468 -Force -ErrorAction SilentlyContinue)",
+      "Bash(awk 'NR>=90 && NR<=100' \"f:/vr agency boost/vrboostagency/VR-BOOST-AGENCY/componnets/sites/treedis-studio/Hub & Avatar/page.tsx\")",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(node \"C:\\\\Users\\\\bouag\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY\\\\01c18b44-6ae4-4810-979b-4b8e9d6019eb\\\\scratchpad\\\\convert_svg.js\" \"componnets/sites/treedis-studio/Hub & Avatar/page.tsx\" \"scratch_converted_svg.txt\")",
+      "Bash(node \"C:\\\\Users\\\\bouag\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY\\\\01c18b44-6ae4-4810-979b-4b8e9d6019eb\\\\scratchpad\\\\assemble.js\" \"scratch_converted_svg.txt\" \"componnets/sites/treedis-studio/Hub & Avatar/page.tsx\")",
+      "Bash(rm -f \"f:/vr agency boost/vrboostagency/VR-BOOST-AGENCY/scratch_converted_svg.txt\")",
+      "Bash(\"./node_modules/.bin/tsc\" --noEmit -p .)",
+      "Bash(rm \"f:/vr agency boost/vrboostagency/VR-BOOST-AGENCY/tsc-out.txt\")",
+      "Bash(node \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/convert.js\" \"componnets/sites/treedis-studio/Home staging/page.tsx\" \"home-staging\" \"public\" \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/report-home-staging.json\")",
+      "Bash(node \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/findbuttons.js\" \"componnets/sites/treedis-studio/Home staging/page.tsx.body.tmp\")",
+      "Bash(node \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/assemble.js\" \"componnets/sites/treedis-studio/Home staging/page.tsx\" \"home-staging\" \"HomeStagingHero\")",
+      "Bash(cp \"componnets/sites/treedis-studio/Home staging/page.tsx.assembled.tsx\" \"componnets/sites/treedis-studio/Home staging/page.tsx\")",
+      "Bash(rm -f \"componnets/sites/treedis-studio/Home staging/page.tsx.body.tmp\" \"componnets/sites/treedis-studio/Home staging/page.tsx.body.tmp.flat.tmp\" \"componnets/sites/treedis-studio/Home staging/page.tsx.body.tmp.spans.json\" \"componnets/sites/treedis-studio/Home staging/page.tsx.meta.json\" \"componnets/sites/treedis-studio/Home staging/page.tsx.assembled.tsx\")",
+      "Bash(node \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/convert.js\" \"componnets/sites/treedis-studio/cgi rendering/page.tsx\" \"cgi-rendering\" \"public\" \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/report-cgi.json\")",
+      "Bash(node \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/assemble.js\" \"componnets/sites/treedis-studio/cgi rendering/page.tsx\" \"cgi-rendering\" \"CgiRenderingHero\")",
+      "Bash(cp \"componnets/sites/treedis-studio/cgi rendering/page.tsx.assembled.tsx\" \"componnets/sites/treedis-studio/cgi rendering/page.tsx\")",
+      "Bash(rm -f \"componnets/sites/treedis-studio/cgi rendering/page.tsx.body.tmp\" \"componnets/sites/treedis-studio/cgi rendering/page.tsx.body.tmp.flat.tmp\" \"componnets/sites/treedis-studio/cgi rendering/page.tsx.body.tmp.spans.json\" \"componnets/sites/treedis-studio/cgi rendering/page.tsx.meta.json\" \"componnets/sites/treedis-studio/cgi rendering/page.tsx.assembled.tsx\")",
+      "Bash(node \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/convert.js\" \"componnets/sites/treedis-studio/Capture Services/page.tsx\" \"capture-services\" \"public\" \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/report-capture.json\")",
+      "Bash(node \"/c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/assemble.js\" \"componnets/sites/treedis-studio/Capture Services/page.tsx\" \"capture-services\" \"CaptureServicesHero\")",
+      "Bash(cp \"componnets/sites/treedis-studio/Capture Services/page.tsx.assembled.tsx\" \"componnets/sites/treedis-studio/Capture Services/page.tsx\")",
+      "Bash(rm -f \"componnets/sites/treedis-studio/Capture Services/page.tsx.body.tmp\" \"componnets/sites/treedis-studio/Capture Services/page.tsx.body.tmp.flat.tmp\" \"componnets/sites/treedis-studio/Capture Services/page.tsx.body.tmp.spans.json\" \"componnets/sites/treedis-studio/Capture Services/page.tsx.meta.json\" \"componnets/sites/treedis-studio/Capture Services/page.tsx.assembled.tsx\")",
+      "Bash(powershell -NoProfile -Command 'Get-CimInstance Win32_Process -Filter \"CommandLine LIKE '\\\\''%next dev%'\\\\'' OR CommandLine LIKE '\\\\''%next-server%'\\\\''\" | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }')",
+      "Bash(curl -s -o /dev/null -w \"post-kill check: %{http_code}\\\\n\" http://localhost:3000 --max-time 3)",
+      "Bash(curl -s -o /dev/null -w \"check: %{http_code}\\\\n\" http://localhost:3000 --max-time 3)",
+      "PowerShell(Get-CimInstance Win32_Process -Filter \"CommandLine LIKE '%next dev%'\")",
+      "Read(//c/Users/bouag/AppData/Local/Temp/claude/f--vr-agency-boost-vrboostagency-VR-BOOST-AGENCY/1e46b723-e691-4c93-a1c3-97339a5f510e/scratchpad/**)"
+    ]
+  }
+}
