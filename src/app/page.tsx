@@ -15,6 +15,7 @@ import { Architecture } from "@/components/sections/Architecture";
 import { UseCases } from "@/components/sections/UseCases";
 import { Privacy } from "@/components/sections/Privacy";
 import { Roadmap } from "@/components/sections/Roadmap";
+import { EnterpriseHR } from "@/components/sections/EnterpriseHR";
 import { CTA, Footer } from "@/components/sections/CTAFooter";
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
         <UseCases />
         <Privacy />
         <Roadmap />
+        <EnterpriseHR />
         <CTA />
       </main>
       <Footer />

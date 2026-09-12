@@ -12,6 +12,7 @@ const links = [
   { href: "/#platforms", label: "Platforms" },
   { href: "/#use-cases", label: "Use cases" },
   { href: "/#privacy", label: "Privacy" },
+  { href: "/#hr", label: "For HR teams" },
 ];
 
 export function Nav() {
