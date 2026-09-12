@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
@@ -24,12 +24,10 @@ export function Nav() {
     >
       <Container className="flex h-16 items-center justify-between">
         <Link href="/#top" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-accent text-white">
-            <Zap size={15} strokeWidth={2.5} />
-          </span>
-          Momentum
+          <Image src="/logo-mark.png" alt="Momentum" width={30} height={27} className="h-8 w-auto" priority />
+          <span className="text-base">Momentum</span>
         </Link>
-        <nav className="hidden items-center gap-8 text-sm text-muted md:flex">
+        <nav className="hidden items-center gap-6 text-sm text-muted md:flex">
           {links.map((l) => (
             <Link key={l.href} href={l.href} className="transition-colors hover:text-foreground">
               {l.label}

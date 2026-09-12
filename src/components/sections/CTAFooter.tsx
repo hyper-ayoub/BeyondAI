@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -36,10 +37,8 @@ export function Footer() {
     <footer className="border-t border-border py-10">
       <Container className="flex flex-col items-center justify-between gap-4 sm:flex-row">
         <Link href="/#top" className="flex items-center gap-2 text-sm font-semibold">
-          <span className="flex h-6 w-6 items-center justify-center rounded-md bg-accent text-white">
-            <Zap size={13} strokeWidth={2.5} />
-          </span>
-          Momentum
+          <Image src="/logo-mark.png" alt="Momentum" width={30} height={27} className="h-6 w-auto" />
+          <span>Momentum</span>
         </Link>
         <p className="text-xs text-muted-2">From intention to behavior.</p>
       </Container>
